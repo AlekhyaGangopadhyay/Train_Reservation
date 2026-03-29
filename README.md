@@ -1,4 +1,4 @@
-# 🚆 Train Reservation System (Python CLI Project)
+# 🚆 Train Reservation System (Java App Project)
 
 A simple **command-line based Train Reservation System** built using Python.  
 This project simulates real-world railway ticket booking by taking user input, allocating seats, and calculating fares dynamically.
