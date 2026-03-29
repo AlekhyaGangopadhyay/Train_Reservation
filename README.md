@@ -107,9 +107,127 @@ Have a safe journey!
 ## 📂 Project Structure
 
 ```
-Train_Reservation/
-│── main.py        # Main application logic
-│── README.md      # Project documentation
+├── app/
+    ├── .gitignore
+    ├── src/
+    │   ├── main/
+    │   │   ├── res/
+    │   │   │   ├── values/
+    │   │   │   │   ├── strings.xml
+    │   │   │   │   ├── colors.xml
+    │   │   │   │   └── themes.xml
+    │   │   │   ├── mipmap-hdpi/
+    │   │   │   │   ├── ic_launcher.webp
+    │   │   │   │   └── ic_launcher_round.webp
+    │   │   │   ├── mipmap-mdpi/
+    │   │   │   │   ├── ic_launcher.webp
+    │   │   │   │   └── ic_launcher_round.webp
+    │   │   │   ├── mipmap-xhdpi/
+    │   │   │   │   ├── ic_launcher.webp
+    │   │   │   │   └── ic_launcher_round.webp
+    │   │   │   ├── mipmap-xxhdpi/
+    │   │   │   │   ├── ic_launcher.webp
+    │   │   │   │   └── ic_launcher_round.webp
+    │   │   │   ├── mipmap-xxxhdpi/
+    │   │   │   │   ├── ic_launcher.webp
+    │   │   │   │   └── ic_launcher_round.webp
+    │   │   │   ├── drawable/
+    │   │   │   │   ├── rounded_blue_border.xml
+    │   │   │   │   ├── header_gradient.xml
+    │   │   │   │   ├── banner_gradient.xml
+    │   │   │   │   ├── ic_launcher_foreground.xml
+    │   │   │   │   └── ic_launcher_background.xml
+    │   │   │   ├── layout/
+    │   │   │   │   ├── item_chip_choice.xml
+    │   │   │   │   ├── activity_news.xml
+    │   │   │   │   ├── activity_booked_tickets.xml
+    │   │   │   │   ├── dialog_station_input.xml
+    │   │   │   │   ├── item_booked_ticket.xml
+    │   │   │   │   ├── activity_platform_booking.xml
+    │   │   │   │   ├── activity_login.xml
+    │   │   │   │   ├── activity_signup.xml
+    │   │   │   │   ├── activity_live_status.xml
+    │   │   │   │   ├── activity_booking.xml
+    │   │   │   │   ├── item_train.xml
+    │   │   │   │   ├── activity_unreserved_booking.xml
+    │   │   │   │   ├── activity_reserved_booking.xml
+    │   │   │   │   └── activity_main.xml
+    │   │   │   ├── values-night/
+    │   │   │   │   └── themes.xml
+    │   │   │   ├── mipmap-anydpi-v26/
+    │   │   │   │   ├── ic_launcher.xml
+    │   │   │   │   └── ic_launcher_round.xml
+    │   │   │   ├── menu/
+    │   │   │   │   └── main_menu.xml
+    │   │   │   └── xml/
+    │   │   │       ├── backup_rules.xml
+    │   │   │       └── data_extraction_rules.xml
+    │   │   ├── java/
+    │   │   │   └── com/
+    │   │   │       └── codewithalekhya/
+    │   │   │           └── train_reservation/
+    │   │   │               ├── Passenger.java
+    │   │   │               ├── NewsResponse.java
+    │   │   │               ├── TrainResponse.java
+    │   │   │               ├── WeatherResponse.java
+    │   │   │               ├── TrainApiService.java
+    │   │   │               ├── LiveStatusResponse.java
+    │   │   │               ├── NewsAdapter.java
+    │   │   │               ├── StationStatusAdapter.java
+    │   │   │               ├── BookedTicket.java
+    │   │   │               ├── BookedTicketsAdapter.java
+    │   │   │               ├── Train.java
+    │   │   │               ├── SignupActivity.java
+    │   │   │               ├── LoginActivity.java
+    │   │   │               ├── NewsActivity.java
+    │   │   │               ├── BookedTicketsActivity.java
+    │   │   │               ├── TrainAdapter.java
+    │   │   │               ├── PlatformBookingActivity.java
+    │   │   │               ├── UnreservedBookingActivity.java
+    │   │   │               ├── LiveStatusActivity.java
+    │   │   │               ├── BookingActivity.java
+    │   │   │               ├── MainActivity.java
+    │   │   │               └── ReservedBookingActivity.java
+    │   │   └── AndroidManifest.xml
+    │   ├── test/
+    │   │   └── java/
+    │   │       └── com/
+    │   │           └── codewithalekhya/
+    │   │               └── train_reservation/
+    │   │                   └── ExampleUnitTest.java
+    │   └── androidTest/
+    │       └── java/
+    │           └── com/
+    │               └── codewithalekhya/
+    │                   └── train_reservation/
+    │                       └── ExampleInstrumentedTest.java
+    ├── proguard-rules.pro
+    └── build.gradle.kts
+├── .idea/
+│   ├── .gitignore
+│   ├── compiler.xml
+│   ├── vcs.xml
+│   ├── AndroidProjectSystem.xml
+│   ├── deviceManager.xml
+│   ├── misc.xml
+│   ├── gradle.xml
+│   ├── deploymentTargetSelector.xml
+│   └── runConfigurations.xml
+├── .gitattributes
+├── gradle/
+│   ├── wrapper/
+│   │   ├── gradle-wrapper.jar
+│   │   └── gradle-wrapper.properties
+│   ├── gradle-daemon-jvm.properties
+│   └── libs.versions.toml
+├── .gitignore
+├── NOTICE
+├── settings.gradle.kts
+├── LICENSE
+├── gradle.properties
+├── gradlew.bat
+├── README.md
+└── gradlew
 ```
 
 ---
