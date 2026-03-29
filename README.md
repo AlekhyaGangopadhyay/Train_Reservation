@@ -1,81 +1,143 @@
-**Project Report: RailReserve Train Reservation System**
+# 🚆 Train Reservation System (Python CLI Project)
 
-**1. Introduction**
+A simple **command-line based Train Reservation System** built using Python.  
+This project simulates real-world railway ticket booking by taking user input, allocating seats, and calculating fares dynamically.
 
-RailReserve is a comprehensive Android application designed to simulate a real-world train reservation experience. It integrates real-time data fetching, user authentication, and persistent storage to provide a seamless flow from searching for trains to managing booking history.
+---
 
-**2. Core Features**
+## 📌 Project Overview
 
-• Authentication System: A secure Login and Signup portal using SharedPreferences to support multiple unique user accounts.
+This application mimics a basic railway reservation workflow where users can:
 
-• Dynamic Dashboard: A "filled" home screen featuring real-time Weather updates for Kolkata and the latest Railway News via external REST APIs.
+- Enter passenger details
+- Select journey preferences
+- Receive a confirmed ticket with:
+  - Coach number
+  - Berth number
+  - Fare details
 
-• Reserved Booking: IRCTC-style search interface with station swapping, date picking, class selection (1A, 2A, SL, etc.), and real-time seat assignment.
+The system uses **Object-Oriented Programming (OOP)** principles and Python's built-in modules to simulate booking logic.
 
-•Unreserved & Platform Tickets: Fast-track booking modules for general travel and station entry.
+---
 
-•My Bookings: A personalized history section that filters tickets based on the logged-in user.
+## 🎯 Features
 
-•Auto-Expiry Engine: A realistic logic that automatically deletes Unreserved and Platform tickets after 12 hours.
+- 🎫 Ticket booking simulation via CLI
+- 🧍 Passenger data input (name, age, gender, etc.)
+- 🚉 Source & destination selection
+- 🛏️ Random berth and coach allocation
+- 💰 Fare calculation based on coach type:
+  - AC
+  - Sleeper
+  - Unreserved
+- 👋 Welcome and exit messages (static methods)
 
-**3. Technical Stack**
+---
 
-• Language: Java
+## 🧠 System Design
 
-• UI Framework: Android Material Design (CoordinatorLayout, CollapsingToolbar, Google Material Cards).
+### 🔹 Core Class: `Train`
 
-• Networking: Retrofit 2 for handling asynchronous API requests.
+| Method | Description |
+|------|------------|
+| `__init__()` | Initializes passenger and journey details |
+| `book()` | Handles booking workflow |
+| `berth_and_fare()` | Assigns berth & calculates fare |
+| `greet()` | Displays welcome message |
+| `greet1()` | Displays farewell message |
 
-• JSON Parsing: Gson for converting API responses into Java objects.
- 
-• Local Storage: SharedPreferences for persisting user credentials and ticket data.
+---
 
-**4. Implementation of Core Java Concepts**
+## 🛠️ Tech Stack
 
-  **A. Multithreading**
-  
-    In this project, multithreading is essential to ensure the UI remains responsive while performing long-running tasks.
-    • Network Calls: We use Retrofit's enqueue() method, which automatically runs network requests (Weather, News, Train Search) on a background worker thread. Once the data is received, it switch back to the  Main      Thread (UI Thread) to update the views.
+- **Language:** Python 3.x
+- **Concepts Used:**
+  - Object-Oriented Programming (OOP)
+  - Classes & Methods
+  - Randomization
+  - User Input Handling
 
-    • Example: When fetching weather for Kolkata, the app doesn't "freeze." The user can still interact with the menu while the background thread communicates with the OpenWeatherMap server.
+---
 
-  **B. Synchronization**
+## 🚀 Getting Started
 
-    Synchronization is used to maintain data integrity, especially in the Train.java model where available seats are managed.
-    
-    • Critical Section: The bookSeats(int count) method is marked with the synchronized keyword.
-    
-    • Why? In a realistic scenario, multiple users might try to book the last remaining seat at the same exact millisecond. Synchronization ensures that only one thread can access the seat-decrementing logic at a       time, preventing "overbooking" or race conditions.
+### 1️⃣ Clone the Repository
 
-  **C. Exception Handling**
+```bash
+git clone https://github.com/AlekhyaGangopadhyay/Train_Reservation.git
+cd Train_Reservation
+```
 
-    Robust exception handling is implemented throughout the app to prevent crashes during runtime.
-    
-    • API Failures: Inside the onFailure and onResponse methods of our API calls, we handle potential errors (like a 403 Forbidden or 404 Not Found) using conditional checks and Toast messages.
-    
-    • Null Pointer Protection: Before performing operations on UI elements (like etFrom.getText().toString()), the app performs null checks to ensure the view exists.
-    
-    • Data Parsing: When using Gson to convert Strings back into List objects, we wrap logic to handle scenarios where the storage might be empty or corrupted, ensuring the app defaults to an empty list instead         of    crashing.
+### ▶️ Run the Program
 
-**5. API Integration**
+```bash
+python main.py
+```
+---
 
-The project utilizes three major API categories:
+## 🧾 User Inputs Required
 
-  1. IRCTC1 (RapidAPI): For live train searches between station codes (e.g., NDLS to HWH).
- 
-  2. OpenWeatherMap API: To display live temperature and weather conditions.
- 
-  3. NewsAPI: To fetch the latest headlines specifically regarding "Indian Railways."
+- Train Number  
+- Passenger Name  
+- Age  
+- Gender (M/F)  
+- Source Station  
+- Destination Station  
+- Coach Type (AC / SL / Unreserved)  
 
-**6. Data Management**
+---
 
-Data is stored using a User-Specific Key System.
+## 📤 Sample Output
 
-• Instead of saving all tickets in one pile, they are saved under booked_tickets_{email}.
+```
+Welcome to Indian Railways
 
-•This ensures that when User A logs in, they cannot see the private tickets of User B.
+Ticket booked for Rahul (25M)
+Train No: 1101
+From: Mumbai → Delhi
+Coach: A3
+Berth: 42
+Fare: ₹1500
 
-**7. Conclusion**
+Have a safe journey!
+```
 
-RailReserve successfully demonstrates the integration of advanced Android components with core Java principles. By combining a "fancy" modern UI with technical concepts like Multithreading for performance, Synchronization for data safety, and Exception Handling for stability, the app provides a realistic and reliable simulation of a professional railway ticketing platform.
-    
+---
+
+## 📂 Project Structure
+
+```
+Train_Reservation/
+│── main.py        # Main application logic
+│── README.md      # Project documentation
+```
+
+---
+
+## 🚀 Future Improvements
+
+- Add database integration (MySQL / SQLite)  
+- Implement real seat availability logic  
+- Build a GUI (Tkinter / Web App)  
+- Add ticket cancellation & history  
+- Introduce user authentication system  
+- API integration with real train data  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository  
+2. Create a new branch  
+3. Make your changes  
+4. Submit a pull request  
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
